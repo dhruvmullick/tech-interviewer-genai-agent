@@ -1,0 +1,98 @@
+[
+  {
+    "id": "two-sum",
+    "title": "Two Sum",
+    "topic": "Arrays",
+    "difficulty": "Easy",
+    "description": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nExample 1:\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return [0, 1].\n\nExample 2:\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\n\nConstraints:\n- 2 <= nums.length <= 10^4\n- -10^9 <= nums[i] <= 10^9\n- -10^9 <= target <= 10^9\n- Only one valid answer exists.",
+    "starter_code": "def two_sum(nums: list[int], target: int) -> list[int]:\n    # Write your solution here\n    pass\n",
+    "hints": [
+      "A brute force approach checks every pair using nested loops (O(N^2)). Can you do it in one pass?",
+      "Try using a Hash Map (dictionary) to store numbers you have already seen and their indices.",
+      "For each element `x`, check if `target - x` is already in your hash map."
+    ],
+    "test_cases": [
+      {
+        "input": {"nums": [2, 7, 11, 15], "target": 9},
+        "expected_output": [0, 1]
+      },
+      {
+        "input": {"nums": [3, 2, 4], "target": 6},
+        "expected_output": [1, 2]
+      },
+      {
+        "input": {"nums": [3, 3], "target": 6},
+        "expected_output": [0, 1]
+      }
+    ],
+    "entry_point": "two_sum",
+    "optimal_complexity": {
+      "time": "O(N)",
+      "space": "O(N)"
+    }
+  },
+  {
+    "id": "valid-palindrome",
+    "title": "Valid Palindrome",
+    "topic": "Strings",
+    "difficulty": "Easy",
+    "description": "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.\n\nGiven a string `s`, return `true` if it is a palindrome, or `false` otherwise.\n\nExample 1:\nInput: s = \"A man, a plan, a canal: Panama\"\nOutput: true\nExplanation: \"amanaplanacanalpanama\" is a palindrome.\n\nExample 2:\nInput: s = \"race a car\"\nOutput: false\nExplanation: \"raceacar\" is not a palindrome.\n\nConstraints:\n- 1 <= s.length <= 2 * 10^5\n- `s` consists only of printable ASCII characters.",
+    "starter_code": "def is_palindrome(s: str) -> bool:\n    # Write your solution here\n    pass\n",
+    "hints": [
+      "First consider cleaning the string by filtering out non-alphanumeric characters and lowercasing everything.",
+      "You can check if the cleaned string is equal to its reverse.",
+      "For optimal O(1) space, consider using two pointers starting from both ends of the string and moving inward."
+    ],
+    "test_cases": [
+      {
+        "input": {"s": "A man, a plan, a canal: Panama"},
+        "expected_output": true
+      },
+      {
+        "input": {"s": "race a car"},
+        "expected_output": false
+      },
+      {
+        "input": {"s": " "},
+        "expected_output": true
+      }
+    ],
+    "entry_point": "is_palindrome",
+    "optimal_complexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    }
+  },
+  {
+    "id": "maximum-subarray",
+    "title": "Maximum Subarray (Kadane's Algorithm)",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "description": "Given an integer array `nums`, find the subarray with the largest sum, and return its sum.\n\nExample 1:\nInput: nums = [-2,1,-3,4,-1,2,1,-5,4]\nOutput: 6\nExplanation: The subarray [4,-1,2,1] has the largest sum 6.\n\nExample 2:\nInput: nums = [1]\nOutput: 1\n\nExample 3:\nInput: nums = [5,4,-1,7,8]\nOutput: 23\n\nConstraints:\n- 1 <= nums.length <= 10^5\n- -10^4 <= nums[i] <= 10^4",
+    "starter_code": "def max_sub_array(nums: list[int]) -> int:\n    # Write your solution here\n    pass\n",
+    "hints": [
+      "Think about how the maximum subarray ending at the current position relates to the maximum subarray ending at the previous position.",
+      "If the current running sum becomes negative, is it ever helpful to keep adding to it?",
+      "Maintain a `current_sum` and `max_sum`. At each step, `current_sum = max(num, current_sum + num)`."
+    ],
+    "test_cases": [
+      {
+        "input": {"nums": [-2, 1, -3, 4, -1, 2, 1, -5, 4]},
+        "expected_output": 6
+      },
+      {
+        "input": {"nums": [1]},
+        "expected_output": 1
+      },
+      {
+        "input": {"nums": [5, 4, -1, 7, 8]},
+        "expected_output": 23
+      }
+    ],
+    "entry_point": "max_sub_array",
+    "optimal_complexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    }
+  }
+]
